@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: center;
+        }
+        .company-details {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 5px;
+            text-align: left;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>    
+    <div class="company-details">
+
+        <h1>Company Details</h1>
+        <h1>{{ company.name }}</h1>
+        <p><strong>Description:</strong> {{ company.description }}</p>
+        <p><strong>Number of Employees:</strong> {{ company.no_employees }}</p>
+    
+        <h2>Jobs at {{ company.name }}</h2>
+        <ul>
+            {% for job in jobs %}
+            <li>
+                <a href="{{ url_for('job_details', job_id=job.id) }}">{{ job.title }}</a> {{ job.location }}
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Jobs</a>
+    </div>
+
+</body>
+</html>

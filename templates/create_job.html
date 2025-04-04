@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Job</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            width: 50%;
+            margin: auto;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 15px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create a New Job</h1>
+    <form method="POST" action="{{ url_for('create') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=50) }}
+        </p>
+        <p>
+            {{ form.company.label }}<br>
+            {{ form.company(size=50) }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=50) }}
+        </p>
+        <p>
+            {{ form.no_employees.label }}<br>
+            {{ form.no_employees(size=50) }}
+        </p>
+        <p>
+            {{ form.location.label }}<br>
+            {{ form.location(size=50) }}
+        </p>
+        <p>
+            {{ form.job_description.label }}<br>
+            {{ form.job_description(size=50) }}
+        </p>
+        <p>
+            {{ form.experience.label }}<br>
+            {{ form.experience(size=50) }}
+        </p>
+        <p>
+            {{ form.salary.label }}<br>
+            {{ form.salary(size=50) }}
+        </p>
+        <p>
+            {{ form.type.label }}<br>
+            {{ form.type(size=50) }}
+        </p>
+        <p>
+            <button type="submit">Create Job</button>
+        </p>
+    </form>
+</body>
+
+</html>
